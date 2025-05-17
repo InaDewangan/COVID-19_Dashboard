@@ -1,0 +1,141 @@
+/* SignUpPage.css */
+
+/* ---------- Layout ---------- */
+.loginpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: white;
+    /* white background */
+    color: #004d4d;
+    /* dark teal text for consistency */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---------- Left Form Section ---------- */
+.loginform {
+    flex: 1;
+    padding: 60px 40px;
+    width: 450px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+.loginform h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #004d4d;
+}
+
+.loginform p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    opacity: 0.85;
+}
+
+/* ---------- Form Styles ---------- */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #003333;
+}
+
+form input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cceeee;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f7ffff;
+}
+
+/* ---------- Terms Section ---------- */
+.terms {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    color: #003333;
+}
+
+.terms input {
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+/* ---------- Button Style ---------- */
+form button {
+    padding: 12px;
+    background-color: #009999;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #00cccc;
+}
+
+/* ---------- Login Link ---------- */
+.loginlink {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #004d4d;
+}
+
+.loginlink a {
+    color: #00aaaa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.loginlink a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Right Image Section ---------- */
+.loginimage {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    width: 450px;
+    height: 550px;
+}
+
+.loginimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+    .loginpage {
+        flex-direction: column;
+    }
+
+    .loginform,
+    .loginimage {
+        width: 100%;
+        flex: none;
+        padding: 30px 20px;
+    }
+
+    .loginimage {
+        order: -1;
+        height: 250px;
+    }
+}

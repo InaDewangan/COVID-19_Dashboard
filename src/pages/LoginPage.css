@@ -1,0 +1,125 @@
+/* LoginPage.css */
+
+/* ---------- Layout ---------- */
+.loginPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: white;
+    color: #004d4d;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---------- Left Image Section ---------- */
+.imageContainer {
+    flex: 1;
+    width: 450px;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- Right Form Section ---------- */
+.formContainer {
+    flex: 1;
+    padding: 60px 40px;
+    width: 450px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+.formContainer h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #004d4d;
+}
+
+.formContainer p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    opacity: 0.85;
+}
+
+/* ---------- Form Styles ---------- */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #003333;
+}
+
+form input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cceeee;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f7ffff;
+}
+
+/* ---------- Button Style ---------- */
+form button {
+    padding: 12px;
+    background-color: #009999;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #00cccc;
+}
+
+/* ---------- Sign Up Link ---------- */
+.signupText {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #004d4d;
+}
+
+.signupText a {
+    color: #00aaaa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signupText a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+    .loginPage {
+        flex-direction: column;
+    }
+
+    .formContainer,
+    .imageContainer {
+        width: 100%;
+        flex: none;
+        padding: 30px 20px;
+    }
+
+    .imageContainer {
+        order: -1;
+        height: 250px;
+    }
+}

@@ -5,7 +5,7 @@ import { auth } from "../firebase";
 import "./LoginPage.css"; // Import CSS 
 import LoginImage from "../assets/login.avif";
 
-const LoginPage = ({ setIsLoggedIn }) => {
+const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate(); // To navigate programmatically
@@ -15,9 +15,8 @@ const LoginPage = ({ setIsLoggedIn }) => {
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            setIsLoggedIn(true); // Mark user as logged in
             alert("Login successful!");
-            navigate("/image-generator"); // Redirect on success
+            navigate("/covidashboard"); // Redirect on success
         } catch (error) {
             alert("Login failed: " + error.message);
         }

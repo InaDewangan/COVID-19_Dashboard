@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# 🌍 COVID-19 Dashboard Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully responsive and authenticated COVID-19 dashboard built with **React** and **Firebase**, displaying real-time and historical pandemic data globally. Users can **register, login**, and access an interactive dashboard with visual charts, statistics, and country-specific details.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🔐 **User Authentication** – Sign up, login, logout, and account deletion using Firebase Authentication.
+- 🌐 **Global Country Selection** – Search or select a country from a dropdown list to view detailed COVID-19 statistics.
+- 📊 **Data Visualizations** – View historical trends via line charts and current stats in pie charts.
+- 📅 **Historical Data** – Timeline data of cases, deaths, and recoveries from over 1500 days.
+- 🗺️ **Country Information** – Displays population, capital, and region of the selected country.
+- ⚡ **Fast and Responsive** – Clean UI design that adapts to all screen sizes.
+- 🔒 **Protected Dashboard** – Dashboard is accessible only after successful login.
+- 🔄 **Session Persistence** – Users stay logged in across sessions unless they explicitly log out.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **Frontend:** React, React Router, CSS
+- **Authentication:** Firebase Authentication
+- **APIs Used:**
+  - [disease.sh API](https://disease.sh/v3/covid-19/historical/{country}?lastdays=1500)
+  - [REST Countries API](https://restcountries.com/v3.1/all)
+- **Charts:** Recharts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📸 Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![COVID-19 Dashboard](image.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📂 Project Structure
 
-### `npm run eject`
+src/
+├── assets/               # Static assets and images
+├── components/           # Chart and stat card components
+├── pages/                # Login, Signup, Dashboard, FrontPage
+├── utils/                # API helper functions
+├── firebase.js           # Firebase configuration
+├── App.js                # Routing and authentication logic
+└── index.js              # React entry point
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ✅ Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Follow these steps to set up the project on your local machine:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+# 1. Clone the Repository
+git clone https://github.com/InaDewangan/COVID-19_Dashboard.git
+cd covid-dashboard-app
 
-## Learn More
+# 2. Install Dependencies
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# 3. Firebase Configuration
+1. Go to Firebase Console
+2. Create a new project
+3. Enable Email/Password Authentication
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Create a .env file in the root directory and add your Firebase credentials like this:
 
-### Code Splitting
+# .env
+REACT_APP_FIREBASE_API_KEY=your_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Make sure you've also updated firebase.js to read from environment variables
 
-### Analyzing the Bundle Size
+# 4. Run the Application
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Then open: http://localhost:3000
 
-### Making a Progressive Web App
+🔌 API Details
+📈 COVID-19 Historical Data
+Endpoint:
+https://disease.sh/v3/covid-19/historical/{country}?lastdays=1500
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Returns:
+Timeline of total cases, deaths, and recoveries for a country.
 
-### Advanced Configuration
+🌐 Country Info
+Endpoint:
+https://restcountries.com/v3.1/all
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Returns:
+Country data including name, population, region, capital, ISO codes.
 
-### Deployment
+🔐 Authentication Flow
+✅ User signs up or logs in via Firebase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+🔐 On successful login, user is redirected to the protected dashboard.
 
-### `npm run build` fails to minify
+🔁 Sessions persist until logout.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🗑️ Account deletion is supported after re-authentication.
+
+🌍 Country Selection Flow
+Users can:
+
+🔎 Search for a country by name
+
+📂 Select from the dropdown list
+
+➡️ The dashboard updates automatically with the selected country's COVID-19 and general info.
+
+🧑‍💻 Author
+Ina Dewangan
+GitHub: https://github.com/InaDewangan
+LinkedIn: https://www.linkedin.com/in/ina-dewangan

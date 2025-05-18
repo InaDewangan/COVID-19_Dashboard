@@ -1,0 +1,48 @@
+.stat-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 20px 20px;
+}
+
+.stat-card {
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.stat-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.blue {
+    background-color: #3366ff;
+}
+
+.green {
+    background-color: #33cc66;
+}
+
+.red {
+    background-color: #ff4d4d;
+}
+
+.grey {
+    background-color: #6c757d;
+}
+
+.yellow {
+    background-color: #ffc107;
+}
+
+.purple {
+    background-color: #6f42c1;
+}

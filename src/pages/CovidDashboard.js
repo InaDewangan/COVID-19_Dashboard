@@ -45,6 +45,8 @@ const CovidDashboard = ({ currentUser }) => {
         if (matched) {
             setSelectedCountry(matched.code);
             alert(`Country selected: ${matched.name}`);
+            setSearchTerm("");
+
         }
     }, [searchTerm, countries]);
 

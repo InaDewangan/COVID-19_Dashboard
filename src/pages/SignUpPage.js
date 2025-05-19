@@ -3,12 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import "./SignUpPage.css";
-import SignUpPageImage from "../assets/signup.jpg"; // Ensure this path is correct
+import SignUpPageImage from "../assets/signup.jpg";
 
 const SignUpPage = () => {
 
     const navigate = useNavigate(); // To navigate on login page
 
+    // Handle form submission for signup
     const handleSignUp = (e) => {
         e.preventDefault();
 

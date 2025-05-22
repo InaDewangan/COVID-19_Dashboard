@@ -11,11 +11,11 @@ import StatCards from "../components/StatCards";
 import "./CovidDashboard.css";
 
 const CovidDashboard = ({ currentUser }) => {
-    const [selectedCountry, setSelectedCountry] = useState("us");
-    const [countries, setCountries] = useState([]);
-    const [covidData, setCovidData] = useState(null);
-    const [countryInfo, setCountryInfo] = useState(null);
-    const [searchTerm, setSearchTerm] = useState("");
+    const [selectedCountry, setSelectedCountry] = useState("us"); // the country selected by user (default: "us")
+    const [countries, setCountries] = useState([]); // list of all countries from API
+    const [covidData, setCovidData] = useState(null); // historical COVID data for selected country
+    const [countryInfo, setCountryInfo] = useState(null); // general info like capital, region
+    const [searchTerm, setSearchTerm] = useState(""); // text typed by user in the search box
 
     // Fetch list of countries on first render
     useEffect(() => {
@@ -50,6 +50,7 @@ const CovidDashboard = ({ currentUser }) => {
         }
     }, [searchTerm, countries]);
 
+    // Dropdown Change Handler
     const handleCountryChange = (e) => {
         setSelectedCountry(e.target.value);
     };

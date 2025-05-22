@@ -26,8 +26,6 @@ const PieChartCard = ({ data }) => {
                 <PieChart>
                     <Pie
                         data={data} // Data to visualize
-                        cx="50%" // X position of center
-                        cy="50%" // Y position of center
                         labelLine={false} // No line from pie to label
                         label={({ name, percent }) =>
                             `${name}: ${(percent * 100).toFixed(1)}%` // Label shows name and percentage

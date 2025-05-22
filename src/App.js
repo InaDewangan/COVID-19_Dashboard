@@ -13,8 +13,8 @@ function App() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-      setAuthLoading(false);
+      setCurrentUser(user); // Set the user if already logged in
+      setAuthLoading(false); // Stop loading screen
     });
     return () => unsubscribe();
   }, []);
